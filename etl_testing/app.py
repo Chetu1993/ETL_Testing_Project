@@ -108,8 +108,22 @@ if "results" in st.session_state:
 
             if selected_row.get("sample_mismatches"):
                 st.write("### Sample Mismatches")
-                mismatched_df=pd.DataFrame(selected_row["sample_mismatches"])
-                st.dataframe(mismatched_df)
+                data=selected_row["sample_mismatches"]
+                if not data:
+                    mismatched_df=pd.DataFrame()
+                else:
+                    try:
+                        if isinstance(data,str):
+                            data=json.loads(data)
+                        if isinstance(data,dict):
+                            data=[data]
+                        mismatched_df=pd.DataFrame(data)
+                    except Exception:
+                        mismatched_df=pd.DataFrame([{"value":data}])
+                if mismatched_df.empty:
+                    st.info("No mismatch data is available")
+                else:
+                    st.dataframe(mismatched_df)
 
 
 
