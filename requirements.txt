@@ -11,3 +11,4 @@ requests==2.32.5
 SQLAlchemy==2.0.48
 streamlit==1.55.0
 yagmail==0.15.293
+python-dotenv
