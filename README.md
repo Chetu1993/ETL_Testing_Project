@@ -1,8 +1,9 @@
 # ETL Testing Framework
 
 ## ETL Testing Flow
-<p align='center'>
- <img src="etl_testing/images/etl_testing_image.jpg" alt="ETL flow diagram" width="600"></p>
+<p align="center">
+  <img src="etl_testing/images/etl-testing-image.jpg" alt="ETL flow diagram" width="600">
+</p>
  
 ## Overview
 
