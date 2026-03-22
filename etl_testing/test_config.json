@@ -1,0 +1,21 @@
+{"tests": [
+  {"name": "row_count_check",
+    "source_query": "select * from source_table;",
+    "target_query": "select * from target_table"},
+
+  {"name": "target_null_count",
+    "target_query":"select * from target_table;"},
+  {"name": "data_validation_check",
+    "source_query": "select * from source_table;",
+    "target_query": "select * from target_table;"},
+  {"name":"schema_validation_check",
+  "source_query": "select * from source_table;",
+  "target_query": "select * from target_table;"},
+  {"name": "duplicate_validation_check",
+  "target_query": "select * from target_table;"},
+  {"name":"datatype_check_validation",
+  "source_query": "select * from source_table;",
+  "target_query": "select * from target_table;"},
+  {"name": "salary_range_validation",
+  "target_query": "select * from target_table;"}]}
+

@@ -1,0 +1,8 @@
+test,status,source_table_count,target_table_count,null_details,mismatch_count,sample_mismatches,source_columns,target_columns,duplicate_count,invalid_rows
+row_count_check,PASS,3.0,3.0,,,,,,,
+target_null_count,PASS,,,"{'id': 0, 'salary_bonus': 0}",,,,,,
+data_validation,FAIL,,,,2.0,"[{'id': 2, 'salary': 200, 'expected_salary': 240.0, 'salary_bonus': 400}, {'id': 3, 'salary': 300, 'expected_salary': 360.0, 'salary_bonus': 600}]",,,,
+schema_validation_check,FAIL,,,,,,"['id', 'salary']","['id', 'salary_bonus']",,
+duplicate_validation_check,PASS,,,,,,,,0.0,
+datatype_check,FAIL,,,,,,,,,
+salary_range_check,PASS,,,,,,,,,0.0

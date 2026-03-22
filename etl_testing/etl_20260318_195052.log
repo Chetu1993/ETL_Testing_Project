@@ -1,0 +1,15 @@
+2026-03-18 19:50:52,148 - etl_logger - INFO - 
+Running test:row_count_check
+2026-03-18 19:50:52,149 - etl_logger - INFO - Source query:select * from source_table;
+2026-03-18 19:50:52,149 - etl_logger - INFO - Target query:select * from target_table
+
+2026-03-18 19:50:52,154 - etl_logger - INFO - 
+Running test:null_check
+2026-03-18 19:50:52,155 - etl_logger - INFO - Source query:None
+2026-03-18 19:50:52,155 - etl_logger - INFO - Target query:select * from target_table;
+
+2026-03-18 19:50:52,158 - etl_logger - INFO - 
+Running test:data_validation_check
+2026-03-18 19:50:52,158 - etl_logger - INFO - Source query:select * from source_table;
+2026-03-18 19:50:52,167 - etl_logger - INFO - Target query:select * from target_table;
+
