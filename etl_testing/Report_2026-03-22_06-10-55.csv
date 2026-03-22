@@ -1,0 +1,8 @@
+test,status,source_table_count,target_table_count,null_details,mismatch_count,sample_mismatches,missing_in_target,extra_in_target,duplicate_count,invalid_rows,run_time
+row_count_check,PASS,3.0,3.0,,,,,,,,2026-03-22 18:10:55.189379
+target_null_count,PASS,,,"{'id': 0, 'salary_bonus': 0}",,,,,,,2026-03-22 18:10:55.189379
+data_validation_check,FAIL,,,,2.0,"[{'id': 2, 'salary': 200, 'expected_salary': 240.0, 'salary_bonus': 400.0}, {'id': 3, 'salary': 300, 'expected_salary': 360.0, 'salary_bonus': 600.0}]",,,,,2026-03-22 18:10:55.189379
+schema_validation_check,PASS,,,,,,['salary'],['salary_bonus'],,,2026-03-22 18:10:55.189379
+duplicate_validation_check,PASS,,,,,,,,0.0,,2026-03-22 18:10:55.189379
+datatype_check_validation,PASS,,,,,,,,,,2026-03-22 18:10:55.189379
+salary_range_validation,PASS,,,,,,,,,0.0,2026-03-22 18:10:55.189379

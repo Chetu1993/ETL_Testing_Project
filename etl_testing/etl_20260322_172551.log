@@ -1,0 +1,70 @@
+2026-03-22 17:25:58,410 - etl_logger - INFO - ========== Running test:row_count_check ==========
+2026-03-22 17:25:58,410 - etl_logger - INFO - Source query:select * from source_table;
+2026-03-22 17:25:58,410 - etl_logger - INFO - Target query:select * from target_table
+
+2026-03-22 17:26:02,238 - etl_logger - INFO - row_count_check PASSED
+2026-03-22 17:26:02,240 - etl_logger - INFO - ========== Running test:target_null_count ==========
+2026-03-22 17:26:02,241 - etl_logger - INFO - Source query:None
+2026-03-22 17:26:02,241 - etl_logger - INFO - Target query:select * from target_table;
+
+2026-03-22 17:26:02,901 - etl_logger - INFO - target_null_count PASSED
+2026-03-22 17:26:02,904 - etl_logger - INFO - ========== Running test:data_validation_check ==========
+2026-03-22 17:26:02,904 - etl_logger - INFO - Source query:select * from source_table;
+2026-03-22 17:26:02,905 - etl_logger - INFO - Target query:select * from target_table;
+
+2026-03-22 17:26:04,218 - etl_logger - INFO - data_validation_check PASSED
+2026-03-22 17:26:04,221 - etl_logger - INFO - ========== Running test:schema_validation_check ==========
+2026-03-22 17:26:04,221 - etl_logger - INFO - Source query:select * from source_table;
+2026-03-22 17:26:04,222 - etl_logger - INFO - Target query:select * from target_table;
+
+2026-03-22 17:26:05,517 - etl_logger - INFO - schema_validation_check PASSED
+2026-03-22 17:26:05,518 - etl_logger - INFO - ========== Running test:duplicate_validation_check ==========
+2026-03-22 17:26:05,518 - etl_logger - INFO - Source query:None
+2026-03-22 17:26:05,518 - etl_logger - INFO - Target query:select * from target_table;
+
+2026-03-22 17:26:06,172 - etl_logger - INFO - duplicate_validation_check PASSED
+2026-03-22 17:26:06,175 - etl_logger - INFO - ========== Running test:datatype_check_validation ==========
+2026-03-22 17:26:06,176 - etl_logger - INFO - Source query:select * from source_table;
+2026-03-22 17:26:06,176 - etl_logger - INFO - Target query:select * from target_table;
+
+2026-03-22 17:26:07,473 - etl_logger - INFO - datatype_check_validation PASSED
+2026-03-22 17:26:07,474 - etl_logger - INFO - ========== Running test:salary_range_validation ==========
+2026-03-22 17:26:07,474 - etl_logger - INFO - Source query:None
+2026-03-22 17:26:07,474 - etl_logger - INFO - Target query:select * from target_table;
+
+2026-03-22 17:26:08,122 - etl_logger - INFO - salary_range_validation PASSED
+2026-03-22 17:48:08,534 - etl_logger - INFO - ========== Running test:row_count_check ==========
+2026-03-22 17:48:08,535 - etl_logger - INFO - Source query:select * from source_table;
+2026-03-22 17:48:08,535 - etl_logger - INFO - Target query:select * from target_table
+
+2026-03-22 17:48:08,718 - etl_logger - ERROR - DB error in row_count_check:Can't reconnect until invalid transaction is rolled back.  Please rollback() fully before proceeding (Background on this error at: https://sqlalche.me/e/20/8s2b)
+2026-03-22 17:48:08,718 - etl_logger - INFO - ========== Running test:target_null_count ==========
+2026-03-22 17:48:08,718 - etl_logger - INFO - Source query:None
+2026-03-22 17:48:08,718 - etl_logger - INFO - Target query:select * from target_table;
+
+2026-03-22 17:48:10,878 - etl_logger - INFO - target_null_count PASSED
+2026-03-22 17:48:10,880 - etl_logger - INFO - ========== Running test:data_validation_check ==========
+2026-03-22 17:48:10,881 - etl_logger - INFO - Source query:select * from source_table;
+2026-03-22 17:48:10,882 - etl_logger - INFO - Target query:select * from target_table;
+
+2026-03-22 17:48:12,054 - etl_logger - INFO - data_validation_check PASSED
+2026-03-22 17:48:12,056 - etl_logger - INFO - ========== Running test:schema_validation_check ==========
+2026-03-22 17:48:12,056 - etl_logger - INFO - Source query:select * from source_table;
+2026-03-22 17:48:12,057 - etl_logger - INFO - Target query:select * from target_table;
+
+2026-03-22 17:48:13,576 - etl_logger - INFO - schema_validation_check PASSED
+2026-03-22 17:48:13,580 - etl_logger - INFO - ========== Running test:duplicate_validation_check ==========
+2026-03-22 17:48:13,581 - etl_logger - INFO - Source query:None
+2026-03-22 17:48:13,582 - etl_logger - INFO - Target query:select * from target_table;
+
+2026-03-22 17:48:14,166 - etl_logger - INFO - duplicate_validation_check PASSED
+2026-03-22 17:48:14,168 - etl_logger - INFO - ========== Running test:datatype_check_validation ==========
+2026-03-22 17:48:14,168 - etl_logger - INFO - Source query:select * from source_table;
+2026-03-22 17:48:14,168 - etl_logger - INFO - Target query:select * from target_table;
+
+2026-03-22 17:48:15,685 - etl_logger - INFO - datatype_check_validation PASSED
+2026-03-22 17:48:15,688 - etl_logger - INFO - ========== Running test:salary_range_validation ==========
+2026-03-22 17:48:15,688 - etl_logger - INFO - Source query:None
+2026-03-22 17:48:15,689 - etl_logger - INFO - Target query:select * from target_table;
+
+2026-03-22 17:48:16,272 - etl_logger - INFO - salary_range_validation PASSED

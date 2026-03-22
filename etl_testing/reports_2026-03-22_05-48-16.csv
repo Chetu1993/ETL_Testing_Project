@@ -1,0 +1,8 @@
+test,status,error_message,execution_time_sec,null_details,mismatch_count,sample_mismatches,missing_in_target,extra_in_target,duplicate_count,invalid_rows
+row_count_check,ERROR,database query failed,0.183,,,,,,,
+target_null_count,PASS,,,"{'id': 0, 'salary_bonus': 0}",,,,,,
+data_validation_check,PASS,,,,0.0,[],,,,
+schema_validation_check,PASS,,,,,,['salary'],['salary_bonus'],,
+duplicate_validation_check,PASS,,,,,,,,0.0,
+datatype_check_validation,PASS,,,,,,,,,
+salary_range_validation,PASS,,,,,,,,,0.0

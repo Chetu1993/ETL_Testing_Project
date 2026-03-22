@@ -1,0 +1,35 @@
+2026-03-22 17:52:01,416 - etl_logger - INFO - ========== Running test:row_count_check ==========
+2026-03-22 17:52:01,417 - etl_logger - INFO - Source query:select * from source_table;
+2026-03-22 17:52:01,418 - etl_logger - INFO - Target query:select * from target_table
+
+2026-03-22 17:52:04,921 - etl_logger - INFO - row_count_check PASSED
+2026-03-22 17:52:04,921 - etl_logger - INFO - ========== Running test:target_null_count ==========
+2026-03-22 17:52:04,922 - etl_logger - INFO - Source query:None
+2026-03-22 17:52:04,922 - etl_logger - INFO - Target query:select * from target_table;
+
+2026-03-22 17:52:05,511 - etl_logger - INFO - target_null_count PASSED
+2026-03-22 17:52:05,512 - etl_logger - INFO - ========== Running test:data_validation_check ==========
+2026-03-22 17:52:05,512 - etl_logger - INFO - Source query:select * from source_table;
+2026-03-22 17:52:05,512 - etl_logger - INFO - Target query:select * from target_table;
+
+2026-03-22 17:52:06,707 - etl_logger - INFO - data_validation_check PASSED
+2026-03-22 17:52:06,708 - etl_logger - INFO - ========== Running test:schema_validation_check ==========
+2026-03-22 17:52:06,708 - etl_logger - INFO - Source query:select * from source_table;
+2026-03-22 17:52:06,709 - etl_logger - INFO - Target query:select * from target_table;
+
+2026-03-22 17:52:07,891 - etl_logger - INFO - schema_validation_check PASSED
+2026-03-22 17:52:07,892 - etl_logger - INFO - ========== Running test:duplicate_validation_check ==========
+2026-03-22 17:52:07,892 - etl_logger - INFO - Source query:None
+2026-03-22 17:52:07,893 - etl_logger - INFO - Target query:select * from target_table;
+
+2026-03-22 17:52:08,478 - etl_logger - INFO - duplicate_validation_check PASSED
+2026-03-22 17:52:08,479 - etl_logger - INFO - ========== Running test:datatype_check_validation ==========
+2026-03-22 17:52:08,479 - etl_logger - INFO - Source query:select * from source_table;
+2026-03-22 17:52:08,479 - etl_logger - INFO - Target query:select * from target_table;
+
+2026-03-22 17:52:09,657 - etl_logger - INFO - datatype_check_validation PASSED
+2026-03-22 17:52:09,658 - etl_logger - INFO - ========== Running test:salary_range_validation ==========
+2026-03-22 17:52:09,658 - etl_logger - INFO - Source query:None
+2026-03-22 17:52:09,658 - etl_logger - INFO - Target query:select * from target_table;
+
+2026-03-22 17:52:10,254 - etl_logger - INFO - salary_range_validation PASSED

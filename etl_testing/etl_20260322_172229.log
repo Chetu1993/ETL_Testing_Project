@@ -1,0 +1,4 @@
+2026-03-22 17:22:35,161 - etl_logger - INFO - ========== Running test:row_count_check ==========
+2026-03-22 17:22:35,162 - etl_logger - INFO - Source query:select * from source_table;
+2026-03-22 17:22:35,162 - etl_logger - INFO - Target query:select * from target_table
+

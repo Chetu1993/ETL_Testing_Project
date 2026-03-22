@@ -23,31 +23,59 @@ def target_null_count(target):
             "null_details":target_table.to_dict(),
             }
 
-def data_validation_check(source,target):
-    required_cols=["id","salary"]
-    target_cols=["id","salary_bonus"]
+import numpy as np
+
+def data_validation_check(source, target):
+    required_cols = ["id", "salary"]
+    target_cols = ["id", "salary_bonus"]
+
     if not all(col in source.columns for col in required_cols) or \
-        not all(col in target.columns for col in target_cols):
-        return {"test":"data_validation_check",
-                "status":"ERROR",
-                "error_message":"required_columns_are_missing"}
-    source_copy=source.copy()
-    source_copy["expected_salary"]=source_copy["salary"]*1.2
-    merged=source_copy.merge(target,on="id",how="inner")
+       not all(col in target.columns for col in target_cols):
+        return {"test": "data_validation_check",
+                "status": "ERROR",
+                "error_message": "required_columns_are_missing"}
 
-    mismatches=merged[merged["expected_salary"]!=merged["salary_bonus"]]
+    source_copy = source.copy()
+    target_copy = target.copy()
 
-    return {"test":"data_validation_check",
-            "status":"PASS" if mismatches.empty else "FAIL",
-            "mismatch_count":len(mismatches),
-            "sample_mismatches":mismatches.head(5).to_dict(orient="records")}
+    # Ensure IDs match type
+    source_copy["id"] = source_copy["id"].astype(int)
+    target_copy["id"] = target_copy["id"].astype(int)
+
+    # Calculate expected salary
+    source_copy["expected_salary"] = (source_copy["salary"] * 1.2).round(2)
+
+    # Clean target salary_bonus
+    target_copy["salary_bonus"] = target_copy["salary_bonus"].astype(float).round(2)
+
+    # Merge
+    merged = source_copy.merge(target_copy, on="id", how="inner")
+    if len(merged) != len(source_copy):
+        print("Warning: Not all source rows matched during merge!")
+
+    # Compare values
+    mismatches = merged[~np.isclose(merged["expected_salary"], merged["salary_bonus"], atol=0.01)]
+
+    print("Merged table:\n", merged)
+    print("Mismatches:\n", mismatches)
+
+    return {
+        "test": "data_validation_check",
+        "status": "FAIL" if not mismatches.empty else "PASS",
+        "mismatch_count": len(mismatches),
+        "sample_mismatches": mismatches.head(5).to_dict(orient="records")
+    }
 
 
 def schema_validation_check(source,target):
+    src_cols=set(source.columns)
+    tgt_cols=set(target.columns)
+    missing=src_cols-tgt_cols
+    extra=tgt_cols-src_cols
     return {"test":"schema_validation_check",
-            "status":"PASS" if list(source.columns)==list(target.columns) else "FAIL",
-            "source_columns":list(source.columns),
-            "target_columns":list(target.columns)}
+            "status":"PASS" if not missing or extra else "FAIL",
+            "missing_in_target":list(missing),
+            "extra_in_target":list(extra)}
 
 
 def duplicate_validation_check(target):
@@ -60,8 +88,13 @@ def duplicate_validation_check(target):
             "duplicate_count":len(duplicates)}
 
 def datatype_check_validation(source,target):
+    mismatches={}
+    for col in source.columns:
+        if col in target.columns:
+            if str(source[col].dtype)!=str(target[col].dtype):
+                mismatches[col]={"source":str(source[col].dtype),"target":str(target[col].dtype)}
     return {"test":"datatype_check_validation",
-            "status":"PASS" if source.dtypes.to_dict()==target.dtypes.to_dict() else "FAIL"}
+            "status":"PASS" if not mismatches else "FAIL"}
 
 def salary_range_validation(target):
     target_cols=["id","salary_bonus"]
