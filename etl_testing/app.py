@@ -1,6 +1,6 @@
 import streamlit as st
 import json
-from etl_testing.db_validations import run_tests
+from db_validations import run_tests
 import pandas as pd
 import matplotlib.pyplot as plt
 import datetime
