@@ -1,7 +1,9 @@
-
+import streamlit as st
 import pandas as pd
 from sqlalchemy import create_engine
-engine=create_engine("mysql+pymysql://root:root@localhost:3306/mydb")
+
+DATABASE_URL=st.secrets["DATABASE_URL"]
+engine=create_engine(DATABASE_URL)
 def get_query(query):
     if not query:
         raise ValueError("Query is None")

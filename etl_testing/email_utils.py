@@ -1,10 +1,9 @@
 import yagmail
-from dotenv import load_dotenv
 import os
+import streamlit as st
 
-load_dotenv()
-user=os.getenv("ETL_EMAIL_USER")
-password=os.getenv("ETL_EMAIL_PASSWORD")
+user=st.secrets["ETL_EMAIL_USER"]
+password=st.secrets["ETL_EMAIL_PASSWORD"]
 def send_email_alert(df):
     failed=df[df["status"]=="FAIL"]
     if failed.empty:
