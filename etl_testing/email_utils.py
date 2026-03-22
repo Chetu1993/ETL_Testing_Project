@@ -2,9 +2,10 @@ import yagmail
 import os
 import streamlit as st
 
-user=st.secrets["ETL_EMAIL_USER"]
-password=st.secrets["ETL_EMAIL_PASSWORD"]
+
 def send_email_alert(df):
+    user = st.secrets["ETL_EMAIL_USER"]
+    password = st.secrets["ETL_EMAIL_PASSWORD"]
     failed=df[df["status"]=="FAIL"]
     if failed.empty:
         return
