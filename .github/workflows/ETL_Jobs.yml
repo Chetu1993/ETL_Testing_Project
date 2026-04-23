@@ -27,11 +27,11 @@ jobs:
       - name: check installed packages
         run: pip list
 
-      - name: setup PYTHONPATH
-        run:  echo "PYTHONPATH=$PWD" >> GITHUB_ENV
+      - name: set PYTHONPATH
+        run:  echo "PYTHONPATH=." >> $GITHUB_ENV
 
       - name: Run tests
-        run: pytest
+        run: python -m pytest
 
         
 

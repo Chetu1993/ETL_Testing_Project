@@ -1,14 +1,7 @@
 import pandas as pd
 
-from etl_testing.db_validations import (
-row_count_check,
-target_null_count,
-data_validation_check,
-schema_validation_check,
-duplicate_validation_check,
-datatype_check_validation,
-salary_range_validation
-)
+from etl_testing.db_validations import *
+
 
 def get_source_data():
     return pd.DataFrame({"id":[1,2,3],"salary":[1000,2000,3000]})
