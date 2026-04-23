@@ -97,14 +97,16 @@ streamlit run app.py
 ## Project Structure
 
 ```
-etl-testing-framework/
-├── app.py                  # Streamlit dashboard
-├── db_validations.py       # ETL validation test functions
-├── db_connection.py        # Database connection helper
-├── email_utils.py          # Email alert functions
-├── logger.py               # Logging configuration
-├── requirements.txt        # Python dependencies
-├── README.md               # Project documentation
+ETL-Testing-Project/
+├── .github/workflows/ETL_jobs.yml    # yaml file to run the jobs
+├──  Tests/test_db_validations.py     # db_validations test cases
+├── app.py                            # Streamlit dashboard
+├── db_validations.py                 # ETL validation test functions
+├── db_connection.py                  # Database connection helper
+├── email_utils.py                    # Email alert functions
+├── logger.py                         # Logging configuration
+├── requirements.txt                  # Python dependencies
+├── README.md                         # Project documentation
 
 ```
 
