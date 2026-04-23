@@ -1,0 +1,30 @@
+name:
+  on:
+    push:
+      branches: [main]
+    pull_request:
+
+  env:
+    FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: True
+
+  jobs:
+    test:
+      runs_on: windows-latest
+
+      steps:
+        - name: checkout code
+          uses: actions/checkout@v4
+
+        - name: install python
+          uses: actions/setup-python@v5
+          with:
+            python-version: '3.13'
+
+        - name: install dependencies
+          run: |
+            pip install -r requirements.txt
+
+        - name: run tests
+          run: |
+            python -m etl_testing/db_validations.py
+
