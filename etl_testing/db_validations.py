@@ -4,6 +4,7 @@ from etl_testing.logger import get_logging
 logger=get_logging()
 from datetime import datetime
 import time
+import numpy as np
 
 def row_count_check(source,target):
     source_count=len(source)
@@ -23,7 +24,6 @@ def target_null_count(target):
             "null_details":target_table.to_dict(),
             }
 
-import numpy as np
 
 def data_validation_check(source, target):
     required_cols = ["id", "salary"]

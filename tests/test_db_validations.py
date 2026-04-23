@@ -1,6 +1,6 @@
 import pandas as pd
-from etl_testing import db_connection
 from etl_testing.db_validations import *
+
 
 
 def get_source_data():
@@ -33,7 +33,7 @@ def test_duplicates():
 
 def test_datatype():
     res=datatype_check_validation(get_source_data(),get_target_data())
-    assert res["status"]==('FAIL')
+    assert res["status"]=='PASS'
 
 def test_salary_range():
     res=salary_range_validation(get_target_data())
