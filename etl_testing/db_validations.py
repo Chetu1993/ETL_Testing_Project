@@ -73,7 +73,7 @@ def schema_validation_check(source,target):
     missing=src_cols-tgt_cols
     extra=tgt_cols-src_cols
     return {"test":"schema_validation_check",
-            "status":"PASS" if not missing or extra else "FAIL",
+            "status":"PASS" if not missing and not extra else "FAIL",
             "missing_in_target":list(missing),
             "extra_in_target":list(extra)}
 
