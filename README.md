@@ -1,4 +1,10 @@
 # ETL Testing Framework
+
+## ETL Testing Flow
+<p align="center">
+  <img src="etl_testing/images/etl-testing-image.jpg" alt="ETL flow diagram" width="600">
+</p>
+ 
 ## Overview
 
 The ETL Testing Framework is a Python-based tool designed to validate data integrity and transformations in ETL (Extract, Transform, Load) pipelines. It allows automated verification of row counts, schema, duplicates, data validation rules, null values, datatypes, and salary ranges. The framework also provides an interactive Streamlit dashboard for visualizing test results and generating reports.
