@@ -1,5 +1,5 @@
 import pandas as pd
-
+from etl_testing import db_connection
 from etl_testing.db_validations import *
 
 

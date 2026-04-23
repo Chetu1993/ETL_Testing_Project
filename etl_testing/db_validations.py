@@ -1,6 +1,6 @@
-import db_connection
+from etl_testing import db_connection
 import pandas as pd
-from logger import get_logging
+from etl_testing.logger import get_logging
 logger=get_logging()
 from datetime import datetime
 import time
